@@ -1,124 +1,134 @@
 // ============================================
-// Palak Badyal — Portfolio v2 interactions
+// Palak Badyal — Portfolio v2.1 interactions
 // ============================================
 
-// TODO: add GitHub URL when available
-const GITHUB_URL = 'https://github.com/palakbadyal69-wq';
-
 document.addEventListener('DOMContentLoaded', () => {
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- Typing effect in hero terminal line ----------
   const typedEl = document.getElementById('typedText');
   const phrases = [
     'whoami',
     'cat about.txt',
-    'node CashFlowAI.js',
-    'echo "building things, one commit at a time"'
+    'echo "building products, one commit at a time"'
   ];
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
 
-  function typeLoop() {
-    if (!typedEl) return;
-    const current = phrases[phraseIndex];
+  if (typedEl && reduceMotion) {
+    typedEl.textContent = phrases[phrases.length - 1];
+  } else if (typedEl) {
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
-    if (!deleting) {
-      typedEl.textContent = current.slice(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === current.length) {
-        deleting = true;
-        setTimeout(typeLoop, 1600);
-        return;
+    const typeLoop = () => {
+      const current = phrases[phraseIndex];
+
+      if (!deleting) {
+        charIndex++;
+        typedEl.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(typeLoop, 1600);
+          return;
+        }
+      } else {
+        charIndex--;
+        typedEl.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
       }
-    } else {
-      typedEl.textContent = current.slice(0, charIndex - 1);
-      charIndex--;
-      if (charIndex === 0) {
-        deleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-      }
-    }
-    setTimeout(typeLoop, deleting ? 28 : 55);
+      setTimeout(typeLoop, deleting ? 28 : 55);
+    };
+    typeLoop();
   }
-  typeLoop();
 
   // ---------- Scroll reveal ----------
   const revealEls = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-  revealEls.forEach(el => revealObserver.observe(el));
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
 
   // ---------- Active nav link on scroll ----------
-  const sections = document.querySelectorAll('section[id]');
+  // The old IntersectionObserver (threshold 0.3) never fired for tall sections,
+  // so some links never highlighted. Pick the last section whose top has passed
+  // 35% of the viewport instead.
+  const sections = Array.from(document.querySelectorAll('section[id]'));
   const navLinks = document.querySelectorAll('.nav-link');
+  let ticking = false;
 
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.dataset.section === id);
-        });
-      }
+  const updateActive = () => {
+    ticking = false;
+    const line = window.innerHeight * 0.35;
+    let current = sections[0].id;
+    sections.forEach(s => {
+      if (s.getBoundingClientRect().top <= line) current = s.id;
     });
-  }, { threshold: 0.25, rootMargin: '-10% 0px -60% 0px' });
-  sections.forEach(s => navObserver.observe(s));
+    // at the very bottom, force the last section (contact is short)
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      current = sections[sections.length - 1].id;
+    }
+    navLinks.forEach(link => {
+      const on = link.dataset.section === current;
+      link.classList.toggle('active', on);
+      if (on) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateActive); }
+  }, { passive: true });
+  window.addEventListener('resize', updateActive);
+  updateActive();
 
-  // ---------- Mobile nav toggle & backdrop ----------
+  // ---------- Mobile nav drawer ----------
   const navToggle = document.getElementById('navToggle');
   const sidenav = document.getElementById('sidenav');
-  let backdrop = document.querySelector('.nav-backdrop');
+  const backdrop = document.getElementById('navBackdrop');
 
-  if (!backdrop) {
-    backdrop = document.createElement('div');
-    backdrop.className = 'nav-backdrop';
-    document.body.appendChild(backdrop);
-  }
-
-  function closeMobileNav() {
-    if (navToggle) navToggle.classList.remove('open');
-    if (sidenav) sidenav.classList.remove('open');
-    if (backdrop) backdrop.classList.remove('open');
-  }
+  const setNav = (open) => {
+    navToggle.classList.toggle('open', open);
+    sidenav.classList.toggle('open', open);
+    if (backdrop) backdrop.classList.toggle('show', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  };
 
   if (navToggle && sidenav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = sidenav.classList.toggle('open');
-      navToggle.classList.toggle('open', isOpen);
-      backdrop.classList.toggle('open', isOpen);
+    navToggle.addEventListener('click', () => setNav(!sidenav.classList.contains('open')));
+    navLinks.forEach(link => link.addEventListener('click', () => setNav(false)));
+    if (backdrop) backdrop.addEventListener('click', () => setNav(false));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidenav.classList.contains('open')) {
+        setNav(false);
+        navToggle.focus();
+      }
     });
-
-    backdrop.addEventListener('click', closeMobileNav);
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMobileNav);
-    });
+    window.addEventListener('resize', () => { if (window.innerWidth > 900) setNav(false); });
   }
 
-  // ---------- Education section expand / collapse ----------
-  const eduToggleBtn = document.getElementById('eduToggleBtn');
-  const eduExpandPanel = document.getElementById('eduExpandPanel');
-  const eduToggleLabel = document.getElementById('eduToggleLabel');
-  const eduToggleIcon = document.getElementById('eduToggleIcon');
+  // ---------- Education "View more" panel ----------
+  const eduToggle = document.getElementById('eduToggle');
+  const eduPanel = document.getElementById('eduPanel');
+  const eduLabel = document.getElementById('eduToggleLabel');
 
-  if (eduToggleBtn && eduExpandPanel) {
-    eduToggleBtn.addEventListener('click', () => {
-      const isExpanded = eduToggleBtn.getAttribute('aria-expanded') === 'true';
-      const nextState = !isExpanded;
-
-      eduToggleBtn.setAttribute('aria-expanded', String(nextState));
-      eduExpandPanel.setAttribute('aria-hidden', String(!nextState));
-      eduExpandPanel.classList.toggle('open', nextState);
-
-      if (eduToggleLabel) eduToggleLabel.textContent = nextState ? 'Show less' : 'View more';
-      if (eduToggleIcon) eduToggleIcon.innerHTML = nextState ? '&uarr;' : '&rarr;';
+  if (eduToggle && eduPanel) {
+    eduToggle.addEventListener('click', () => {
+      const open = !eduPanel.classList.contains('open');
+      eduPanel.classList.toggle('open', open);
+      eduToggle.setAttribute('aria-expanded', String(open));
+      if (eduLabel) eduLabel.textContent = open ? 'Show less' : 'View more';
     });
   }
 

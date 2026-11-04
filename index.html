@@ -1,60 +1,52 @@
-<!-- GITHUB_URL = https://github.com/palakbadyal69-wq -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palak Badyal | CSE Student & Developer</title>
-    <meta name="description" content="Personal portfolio of Palak Badyal, 5th-semester Computer Science & Engineering student at NIT Srinagar (B.Tech 2024-2028). Passionate about web development, Data Structures & Algorithms, React.js, and CashFlowAI.">
-    <meta name="author" content="Palak Badyal">
-    
-    <!-- Open Graph / Social Media -->
+    <title>Palak Badyal | Frontend Developer &amp; Startup Builder</title>
+    <meta name="description" content="Palak Badyal, Computer Science student at NIT Srinagar. Frontend and UI/UX developer, startup coordinator and builder of CashFlowAI.">
+    <meta property="og:title" content="Palak Badyal | Frontend Developer &amp; Startup Builder">
+    <meta property="og:description" content="CSE student at NIT Srinagar. Frontend and UI/UX developer, startup coordinator and builder of CashFlowAI.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Palak Badyal | Portfolio">
-    <meta property="og:description" content="Computer Science student at NIT Srinagar building practical web applications and AI tools.">
     <meta property="og:image" content="thumbnail.png">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Palak Badyal | Portfolio">
-    <meta name="twitter:description" content="Computer Science student at NIT Srinagar building practical web applications and AI tools.">
-    <meta name="twitter:image" content="thumbnail.png">
-
-    <!-- Favicon -->
-    <link rel="icon" href="profile.jpeg" type="image/jpeg">
-
+    <meta name="theme-color" content="#0A0C10">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0C10'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%237DF9C4'%3EPB%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="index.css">
+    <noscript><style>.reveal{opacity:1;transform:none}.hero-name,.hero-id{opacity:1}.edu-panel{grid-template-rows:1fr}</style></noscript>
 </head>
 <body>
 
+    <a href="#main" class="skip-link">Skip to content</a>
     <div class="bg-grid" aria-hidden="true"></div>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
-    <header class="site-header">
-        <nav class="sidenav" id="sidenav">
-            <div class="nav-brand">
-                <span class="nav-brand-mark">PB</span>
-                <span class="nav-brand-sub">// portfolio</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link active" data-section="about"><span class="nav-num">01</span>about.js</a></li>
-                <li><a href="#education" class="nav-link" data-section="education"><span class="nav-num">02</span>education.js</a></li>
-                <li><a href="#skills" class="nav-link" data-section="skills"><span class="nav-num">03</span>skills.js</a></li>
-                <li><a href="#projects" class="nav-link" data-section="projects"><span class="nav-num">04</span>projects.js</a></li>
-                <li><a href="#experience" class="nav-link" data-section="experience"><span class="nav-num">05</span>experience.js</a></li>
-                <li><a href="#achievements" class="nav-link" data-section="achievements"><span class="nav-num">06</span>achievements.js</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact"><span class="nav-num">07</span>contact.js</a></li>
-            </ul>
-            <div class="nav-status">
-                <span class="status-dot"></span> available for opportunities
-            </div>
-        </nav>
+    <nav class="sidenav" id="sidenav" aria-label="Main navigation">
+        <div class="nav-brand">
+            <span class="nav-brand-mark">PB</span>
+            <span class="nav-brand-sub">// portfolio</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-link active" data-section="about"><span class="nav-num">01</span>about.js</a></li>
+            <li><a href="#education" class="nav-link" data-section="education"><span class="nav-num">02</span>education.js</a></li>
+            <li><a href="#skills" class="nav-link" data-section="skills"><span class="nav-num">03</span>skills.js</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects"><span class="nav-num">04</span>projects.js</a></li>
+            <li><a href="#experience" class="nav-link" data-section="experience"><span class="nav-num">05</span>experience.js</a></li>
+            <li><a href="#achievements" class="nav-link" data-section="achievements"><span class="nav-num">06</span>achievements.js</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact"><span class="nav-num">07</span>contact.js</a></li>
+        </ul>
+        <div class="nav-status">
+            <span class="status-dot"></span> available for opportunities
+        </div>
+    </nav>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </button>
-    </header>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidenav">
+        <span></span><span></span><span></span>
+    </button>
 
-    <main class="content" id="main-content">
+    <main class="content" id="main">
 
         <section class="hero" id="about">
             <p class="terminal-line">
@@ -63,98 +55,64 @@
             </p>
 
             <h1 class="hero-name">PALAK <span class="accent-text">BADYAL</span></h1>
-            <p class="hero-id">2024BCSE012</p>
+            <p class="hero-id">B.Tech CSE &middot; NIT Srinagar &middot; 2024&ndash;2028</p>
 
             <div class="hero-profile reveal">
-                <img src="profile.jpeg" width="120" height="150" alt="Palak Badyal - Computer Science Student at NIT Srinagar" class="hero-img" loading="lazy">
+                <img src="profile.jpeg" width="120" height="150" alt="Portrait of Palak Badyal" class="hero-img" decoding="async">
                 <div class="hero-tags">
                     <span class="tag">Computer Science Student</span>
                     <span class="tag">5th Semester</span>
-                    <span class="tag tag-accent">Aspiring Software Developer</span>
+                    <span class="tag tag-accent">Frontend Developer &amp; Startup Builder</span>
                 </div>
             </div>
 
             <p class="hero-about reveal">
-                Hello, I am a <strong>Computer Science and Engineering student</strong> at National Institute of Technology, Srinagar (B.Tech 2024-2028), with a strong interest in programming and web development. I have knowledge of C, C++, JavaScript, HTML, CSS and Python, and enjoy building practical projects. I am passionate about learning new technologies — currently exploring React.js — and improving my problem-solving skills through Data Structures and Algorithms.
+                I'm a <strong>Computer Science and Engineering student</strong> at NIT Srinagar who likes turning ideas into working products. I build <strong>frontend and UI/UX</strong> (most recently as an intern at Goexergy), help run a <strong>student-led travel startup</strong> (Safar Saarthi) and coordinate startup initiatives at the Greenovator Incubation Foundation. I'm currently building <strong>CashFlowAI</strong>, an AI cash-flow assistant, and learning React.js, Power BI and Azure.
             </p>
+
+            <div class="stat-strip reveal">
+                <div class="stat"><span class="stat-num">8.07</span><span class="stat-label">CGPA (through sem 4)</span></div>
+                <div class="stat"><span class="stat-num">~12</span><span class="stat-label">trips run</span></div>
+                <div class="stat"><span class="stat-num">100+</span><span class="stat-label">participants managed</span></div>
+                <div class="stat"><span class="stat-num">~&#8377;30L</span><span class="stat-label">revenue generated</span></div>
+            </div>
 
             <div class="hero-cta reveal">
                 <a href="#projects" class="btn btn-primary">View projects <i>&rarr;</i></a>
-                <a href="palak_badyal_resume.pdf" target="_blank" rel="noopener" download class="btn btn-ghost">Download Resume</a>
+                <a href="Palak_Badyal_Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Resume <i>&darr;</i></a>
                 <a href="#contact" class="btn btn-ghost">Get in touch</a>
             </div>
         </section>
 
         <section class="block" id="education">
             <h2 class="block-title"><span class="block-num">02</span>Education</h2>
-            <p class="block-lead reveal">Currently pursuing B.Tech in CSE from NIT Srinagar (2024&ndash;2028), building strong foundations in programming and development. CGPA: 8.07 through sem 4.</p>
-            
-            <button class="link-card edu-toggle-btn reveal" id="eduToggleBtn" aria-expanded="false" aria-controls="eduExpandPanel" type="button">
-                <span id="eduToggleLabel">View more</span> <i id="eduToggleIcon">&rarr;</i>
+            <p class="block-lead reveal">B.Tech in Computer Science &amp; Engineering at NIT Srinagar (2024&ndash;2028). <strong>CGPA 8.07</strong> through 4th semester.</p>
+
+            <button class="link-card reveal" id="eduToggle" type="button" aria-expanded="false" aria-controls="eduPanel">
+                <span id="eduToggleLabel">View more</span> <i>&darr;</i>
             </button>
 
-            <div class="edu-expand-panel" id="eduExpandPanel" aria-hidden="true">
-                <div class="timeline">
-                    <!-- B.Tech CSE -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">B.Tech in Computer Science &amp; Engineering</h3>
-                            <span class="timeline-org">National Institute of Technology (NIT), Srinagar &bull; 2024&ndash;2028</span>
-                        </div>
-                        <p class="timeline-desc edu-cgpa-line"><strong class="accent-text">CGPA: 8.07</strong> <span class="cgpa-sub">(through sem 4)</span></p>
-                        
-                        <div class="sem-grid">
-                            <div class="sem-card">
-                                <span class="sem-name">Sem 1</span>
-                                <span class="sem-val">SGPA: 7.95</span>
+            <div class="edu-panel" id="eduPanel">
+                <div class="edu-panel-inner">
+                    <div class="timeline">
+                        <div class="tl-item">
+                            <span class="tl-date">2024 &ndash; 2028</span>
+                            <h3 class="tl-title">B.Tech, Computer Science &amp; Engineering</h3>
+                            <p class="tl-org">National Institute of Technology (NIT), Srinagar</p>
+                            <div class="sgpa-grid">
+                                <div class="sgpa"><span class="sgpa-sem">Sem 1</span><span class="sgpa-val">7.95</span></div>
+                                <div class="sgpa"><span class="sgpa-sem">Sem 2</span><span class="sgpa-val">8.17</span></div>
+                                <div class="sgpa"><span class="sgpa-sem">Sem 3</span><span class="sgpa-val">7.92</span></div>
+                                <div class="sgpa"><span class="sgpa-sem">Sem 4</span><span class="sgpa-val">8.55</span></div>
+                                <div class="sgpa sgpa-cgpa"><span class="sgpa-sem">CGPA</span><span class="sgpa-val">8.07</span></div>
                             </div>
-                            <div class="sem-card">
-                                <span class="sem-name">Sem 2</span>
-                                <span class="sem-val">SGPA: 8.17</span>
-                            </div>
-                            <div class="sem-card">
-                                <span class="sem-name">Sem 3</span>
-                                <span class="sem-val">SGPA: 7.92</span>
-                            </div>
-                            <div class="sem-card">
-                                <span class="sem-name">Sem 4</span>
-                                <span class="sem-val">SGPA: 8.55</span>
-                            </div>
-                            <div class="sem-card sem-card-cgpa">
-                                <span class="sem-name sem-name-cgpa">CGPA</span>
-                                <span class="sem-val sem-val-cgpa">8.07</span>
-                            </div>
+                            <p class="tl-desc">SGPA per semester. Now in 5th semester.</p>
                         </div>
-                    </div>
-
-                    <!-- Class 12 -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">Class 12 (Higher Secondary)</h3>
-                            <span class="timeline-org">Govt High Secondary School, Jammu &bull; JKBOSE (2022)</span>
+                        <div class="tl-item">
+                            <span class="tl-date">2023</span>
+                            <h3 class="tl-title">Class XII &mdash; 90.6%</h3>
+                            <p class="tl-org">Govt. Higher Secondary School, Channi Himmat, Jammu</p>
                         </div>
-                        <!-- TODO: verify Class 12 details -->
-                        <p class="timeline-desc">Stream: Non-Medical &bull; Score: <strong>90.6%</strong></p>
-                    </div>
-
-                    <!-- Class 11 -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">Class 11</h3>
-                            <span class="timeline-org">Govt High Secondary School, Jammu &bull; JKBOSE (2021)</span>
-                        </div>
-                        <!-- TODO: verify Class 11 details -->
-                        <p class="timeline-desc">Stream: Non-Medical &bull; Score: <strong>94%</strong></p>
-                    </div>
-
-                    <!-- Class 10 -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">Class 10 (Secondary)</h3>
-                            <span class="timeline-org">Brooklyn Mission High School, Chenani &bull; JKBOSE (2020)</span>
-                        </div>
-                        <!-- TODO: verify Class 10 details -->
-                        <p class="timeline-desc">Score: <strong>9.80</strong></p>
                     </div>
                 </div>
             </div>
@@ -166,49 +124,37 @@
                 <div class="skill-card reveal">
                     <span class="skill-label">Languages</span>
                     <div class="skill-pills">
-                        <span class="pill">C</span><span class="pill">C++</span><span class="pill">JavaScript</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Python</span>
+                        <span class="pill">C</span><span class="pill">C++</span><span class="pill">JavaScript</span><span class="pill">SQL</span><span class="pill">Python</span><span class="pill">HTML</span><span class="pill">CSS</span>
                     </div>
                 </div>
                 <div class="skill-card reveal">
-                    <span class="skill-label">Core subjects</span>
+                    <span class="skill-label">Core CS</span>
                     <div class="skill-pills">
-                        <span class="pill">Data Structures & Algorithms</span><span class="pill">DBMS</span><span class="pill">OOPs</span>
+                        <span class="pill">Data Structures &amp; Algorithms</span><span class="pill">OOP</span><span class="pill">DBMS</span><span class="pill">Statistics</span>
                     </div>
                 </div>
                 <div class="skill-card reveal">
                     <span class="skill-label">Web development</span>
                     <div class="skill-pills">
-                        <span class="pill">DOM Manipulation</span><span class="pill">Responsive Design</span><span class="pill">Frontend Development</span>
+                        <span class="pill">Frontend Development</span><span class="pill">UI/UX</span><span class="pill">Responsive Design</span><span class="pill">DOM Manipulation</span>
                     </div>
                 </div>
                 <div class="skill-card reveal">
-                    <span class="skill-label">Tools</span>
+                    <span class="skill-label">Data</span>
                     <div class="skill-pills">
-                        <span class="pill">VS Code</span><span class="pill">GitHub</span>
+                        <span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">SQL</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Terminal Status Panel for Currently building / learning -->
-            <div class="terminal-status-panel reveal">
-                <div class="terminal-status-header">
-                    <span class="status-indicator"></span>
-                    <span class="terminal-title">status --current-focus</span>
-                </div>
-                <div class="terminal-status-body">
-                    <div class="status-row">
-                        <span class="status-label">Currently building:</span>
-                        <span class="status-badge status-building">CashFlowAI</span>
-                        <span class="status-desc">(Node.js + AI APIs)</span>
+                <div class="skill-card reveal">
+                    <span class="skill-label">Dev tools</span>
+                    <div class="skill-pills">
+                        <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span>
                     </div>
-                    <div class="status-row">
-                        <span class="status-label">Currently learning:</span>
-                        <div class="status-pills">
-                            <span class="pill pill-glow">React.js</span>
-                            <span class="pill">Python</span>
-                            <span class="pill">Power BI</span>
-                            <span class="pill">Azure</span>
-                        </div>
+                </div>
+                <div class="skill-card reveal skill-card-learning">
+                    <span class="skill-label">Currently learning</span>
+                    <div class="skill-pills">
+                        <span class="pill pill-glow">React.js</span><span class="pill pill-glow">Power BI</span><span class="pill pill-glow">Microsoft Azure</span>
                     </div>
                 </div>
             </div>
@@ -216,165 +162,107 @@
 
         <section class="block" id="projects">
             <h2 class="block-title"><span class="block-num">04</span>Projects</h2>
-            <p class="block-lead reveal">From CashFlowAI to an Amazon-inspired e-commerce frontend, an interactive Tic Tac Toe game, and a student travel startup, I enjoy building practical, user-focused projects across web development and creative collaboration.</p>
-
+            <p class="block-lead reveal">Practical, user-focused builds, from AI tooling and travel tech to e-commerce UI and research.</p>
             <div class="project-grid">
-                <!-- CashFlowAI Featured Project -->
-                <article class="project-card project-featured reveal">
-                    <div class="project-badge">Featured</div>
-                    <h3 class="project-title">CashFlowAI</h3>
-                    <p class="project-desc">AI-powered financial management and cash flow tracking application for automated expense insights, budget management, and predictive financial analytics.</p>
-                    <div class="project-tech">
-                        <span class="pill">Node.js</span>
-                        <span class="pill">AI APIs</span>
-                        <span class="pill">JavaScript</span>
-                        <span class="pill">Express</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/palakbadyal69-wq/Cash_Flow_" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">GitHub</a>
-                    </div>
-                </article>
-
-                <!-- Amazon E-Commerce Clone -->
                 <article class="project-card reveal">
-                    <h3 class="project-title">E-Commerce Frontend</h3>
-                    <p class="project-desc">Amazon-inspired e-commerce web application featuring responsive product grids, interactive cart interface, and modern UI components.</p>
-                    <div class="project-tech">
-                        <span class="pill">HTML</span>
-                        <span class="pill">CSS</span>
-                        <span class="pill">JavaScript</span>
-                    </div>
-                    <div class="project-actions">
-                        <!-- TODO: replace palakbadyal69-wq/amazon-clone with actual repository URL -->
-                        <a href="https://github.com/palakbadyal69-wq/amazon-clone" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">GitHub</a>
-                    </div>
+                    <span class="project-tag">AI &middot; Finance</span>
+                    <h3>CashFlowAI</h3>
+                    <p>AI-powered finance tracker that helps users and startups monitor spending and manage cash flow. Node.js backend with AI API calls. Currently in development.</p>
+                    <div class="skill-pills"><span class="pill">JavaScript</span><span class="pill">Node.js</span><span class="pill">AI APIs</span></div>
+                    <a href="https://github.com/palakbadyal69-wq/Cash_Flow_" target="_blank" rel="noopener" class="project-link">View on GitHub <i>&rarr;</i></a>
                 </article>
-
-                <!-- Tic Tac Toe Game -->
                 <article class="project-card reveal">
-                    <h3 class="project-title">Tic Tac Toe Game</h3>
-                    <p class="project-desc">Interactive web-based Tic Tac Toe game with turn tracking, win condition detection, score keeping, and reset functionality.</p>
-                    <div class="project-tech">
-                        <span class="pill">JavaScript</span>
-                        <span class="pill">HTML</span>
-                        <span class="pill">CSS</span>
-                    </div>
-                    <div class="project-actions">
-                        <!-- TODO: replace palakbadyal69-wq/tic-tac-toe with actual repository URL -->
-                        <a href="https://github.com/palakbadyal69-wq/tic-tac-toe" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">GitHub</a>
-                    </div>
+                    <span class="project-tag">Startup &middot; Web</span>
+                    <h3>Safar Saarthi Website</h3>
+                    <p>Website for a student-led travel startup with trip sliders, a student login system and a branded colour palette.</p>
+                    <div class="skill-pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span></div>
                 </article>
-
-                <!-- Safar Saarthi Platform -->
                 <article class="project-card reveal">
-                    <h3 class="project-title">Safar Saarthi Platform</h3>
-                    <p class="project-desc">Student travel startup platform facilitating group trip booking, logistics coordination, and travel management for university students.</p>
-                    <div class="project-tech">
-                        <span class="pill">HTML/CSS</span>
-                        <span class="pill">JavaScript</span>
-                        <span class="pill">Logistics</span>
-                    </div>
-                    <div class="project-actions">
-                        <!-- TODO: replace palakbadyal69-wq/safar-saarthi with actual repository URL -->
-                        <a href="https://github.com/palakbadyal69-wq/safar-saarthi" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">GitHub</a>
-                    </div>
+                    <span class="project-tag">Research</span>
+                    <h3>Smart Podium Case Study</h3>
+                    <p>Root-cause analysis of why Rs. 2L+ smart podiums go unused in classrooms, based on interviews with teachers, students and administrative staff.</p>
+                    <div class="skill-pills"><span class="pill">Root-cause analysis</span><span class="pill">User research</span></div>
+                </article>
+                <article class="project-card reveal">
+                    <span class="project-tag">E-commerce &middot; Frontend</span>
+                    <h3>Amazon Clone</h3>
+                    <p>Amazon-inspired e-commerce frontend focused on layout fidelity and responsive UI patterns.</p>
+                    <div class="skill-pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span></div>
+                </article>
+                <article class="project-card reveal">
+                    <span class="project-tag">Game</span>
+                    <h3>Tic Tac Toe</h3>
+                    <p>Interactive game with symbol selection, turn indicators and draw detection, in vanilla JavaScript.</p>
+                    <div class="skill-pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span></div>
+                </article>
+                <article class="project-card reveal">
+                    <span class="project-tag">Creative</span>
+                    <h3>Short Film</h3>
+                    <p>A short film, part of my creative work alongside code.</p>
                 </article>
             </div>
-
             <a href="https://github.com/palakbadyal69-wq?tab=repositories" target="_blank" rel="noopener" class="link-card reveal">
-                view all projects <i>&rarr;</i>
+                view all repositories on GitHub <i>&rarr;</i>
             </a>
         </section>
 
         <section class="block" id="experience">
             <h2 class="block-title"><span class="block-num">05</span>Experience</h2>
-            <p class="block-lead reveal">As Student Coordinator for Safar Saarthi and a volunteer with IIEDC, I have managed logistics for 100+ participant trips, supported startup events, and contributed to premier NIT Srinagar fests like Techvaganza and Rang-e-Chinar — building strong leadership, PR, and crisis-management skills.</p>
-
-            <!-- Stat Strip -->
-            <div class="stat-strip reveal">
-                <div class="stat-item">
-                    <span class="stat-num">12</span>
-                    <span class="stat-label">Trips Organized</span>
+            <div class="timeline reveal">
+                <div class="tl-item">
+                    <span class="tl-date">Jun 2026 &ndash; Oct 2026</span>
+                    <h3 class="tl-title">Frontend &amp; UI/UX Intern</h3>
+                    <p class="tl-org">Goexergy &middot; Offline</p>
+                    <p class="tl-desc">Worked on frontend performance and UI/UX for a web platform, built responsive interfaces and translated design requirements into functional pages.</p>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-num">100+</span>
-                    <span class="stat-label">Participants</span>
+                <div class="tl-item">
+                    <span class="tl-date">NIT Srinagar</span>
+                    <h3 class="tl-title">Student Coordinator &amp; Web Developer</h3>
+                    <p class="tl-org">Safar Saarthi</p>
+                    <p class="tl-desc">Co-run a 3-member, student-led travel startup that has run about 12 affordable student trips and generated around &#8377;30L in revenue. Coordinated trips for 100+ participants, managed communication and logistics, and built the website with a student login system.</p>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-num">~₹30L</span>
-                    <span class="stat-label">Budget & Operations</span>
+                <div class="tl-item">
+                    <span class="tl-date">NIT Srinagar</span>
+                    <h3 class="tl-title">Startup Coordinator</h3>
+                    <p class="tl-org">Greenovator Incubation Foundation (GIF)</p>
+                    <p class="tl-desc">Coordinate startup and incubation activities, supporting early-stage founders and campus entrepreneurship initiatives.</p>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-num">3-member</span>
-                    <span class="stat-label">Team Coordinated</span>
+                <div class="tl-item">
+                    <span class="tl-date">NIT Srinagar</span>
+                    <h3 class="tl-title">Graphic Design Lead</h3>
+                    <p class="tl-org">Vikshit Bharat 2047</p>
+                    <p class="tl-desc">Led the graphic design team, producing visual assets and branding material, and coordinated with other event teams to meet timelines.</p>
                 </div>
-            </div>
-
-            <!-- Timeline (Line-by-line reveal animation) -->
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Frontend &amp; UI/UX Intern</h3>
-                        <span class="timeline-org">Goexergy &bull; Present (Remote)</span>
-                    </div>
-                    <p class="timeline-desc">Develop and improve the company website through frontend development and UI/UX work; build responsive interfaces focused on usability and visual consistency.</p>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Student Coordinator &amp; Web Developer</h3>
-                        <span class="timeline-org">Safar Saarthi &bull; NIT Srinagar</span>
-                    </div>
-                    <p class="timeline-desc">Co-run a student-led travel startup; developed the Safar Saarthi website with a student login system. Coordinated student trips and activities involving 100+ participants and managed participant communication and logistics.</p>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Startup Coordinator</h3>
-                        <span class="timeline-org">Greenovator Incubation Foundation (GIF) &bull; NIT Srinagar</span>
-                    </div>
-                    <p class="timeline-desc">Coordinate startup and incubation activities, supporting early-stage founders and campus entrepreneurship initiatives.</p>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Graphic Design Lead</h3>
-                        <span class="timeline-org">Vikshit Bharat 2047 &bull; NIT Srinagar</span>
-                    </div>
-                    <p class="timeline-desc">Led the graphic design team, producing visual assets and branding material for the event; aligned design output with overall event timelines and objectives.</p>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Student Volunteer</h3>
-                        <span class="timeline-org">IIEDC (Innovation &amp; Entrepreneurship Centre) &bull; NIT Srinagar</span>
-                    </div>
-                    <p class="timeline-desc">Supported campus startup ecosystems, entrepreneurship workshops, and pitch events. Participated in IGNITE Bootcamp on Startup Success at University of Kashmir.</p>
+                <div class="tl-item">
+                    <span class="tl-date">NIT Srinagar</span>
+                    <h3 class="tl-title">Student Volunteer</h3>
+                    <p class="tl-org">IIEDC &amp; NIT Srinagar fests (Techvaganza, Rang-e-Chinar)</p>
+                    <p class="tl-desc">Supported workshops, entrepreneurship initiatives, outreach and participant engagement across campus events.</p>
                 </div>
             </div>
-
-            <a href="https://www.linkedin.com/in/palak-badyal-947a18355" target="_blank" rel="noopener" class="link-card reveal">
-                view experience on LinkedIn <i>&rarr;</i>
-            </a>
         </section>
 
         <section class="block" id="achievements">
             <h2 class="block-title"><span class="block-num">06</span>Achievements</h2>
             <div class="achieve-grid">
                 <div class="achieve-card reveal">
-                    <span class="achieve-icon">&#9733;</span>
+                    <span class="achieve-icon" aria-hidden="true">&#9733;</span>
                     <p><strong>3rd Rank</strong> in a company-conducted technical assessment</p>
                 </div>
                 <div class="achieve-card reveal">
-                    <span class="achieve-icon">&#9889;</span>
+                    <span class="achieve-icon" aria-hidden="true">&#9889;</span>
                     <p><strong>Web Development Internship offer</strong> received based on assessment performance</p>
                 </div>
                 <div class="achieve-card reveal">
-                    <span class="achieve-icon">&#9730;</span>
+                    <span class="achieve-icon" aria-hidden="true">&#9873;</span>
+                    <p>Coordinated <strong>Safar Saarthi</strong> activities involving 100+ participants</p>
+                </div>
+                <div class="achieve-card reveal">
+                    <span class="achieve-icon" aria-hidden="true">&#9730;</span>
                     <p>Participated in the <strong>IGNITE Bootcamp</strong> on Startup Success &mdash; NewGen IEDC, University of Kashmir</p>
                 </div>
                 <div class="achieve-card reveal">
-                    <span class="achieve-icon">&#9881;</span>
+                    <span class="achieve-icon" aria-hidden="true">&#9881;</span>
                     <p>Attended workshops on <strong>AI and Hacking Techniques</strong></p>
                 </div>
             </div>
@@ -392,10 +280,9 @@
                     <span class="contact-label">LinkedIn</span>
                     <span class="contact-value">palak-badyal</span>
                 </a>
-                <!-- TODO: add GitHub URL -->
                 <a href="https://github.com/palakbadyal69-wq" target="_blank" rel="noopener" class="contact-card">
                     <span class="contact-label">GitHub</span>
-                    <span class="contact-value">view profile</span>
+                    <span class="contact-value">palakbadyal69-wq</span>
                 </a>
                 <a href="tel:+916005862221" class="contact-card">
                     <span class="contact-label">Phone</span>
